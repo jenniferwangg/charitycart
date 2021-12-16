@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Click to donate while online shopping.">
+        <title>Charity Cart</title>
+        <link rel="stylesheet" href="/style-sheet.css">
+        <script src="/jquery-3.6.0.min.js"></script>
+        <script src="/popup.js"></script>
+    </head>
+
+    <header>
+        <img src="charity-cart-logo.png" alt="Charity Cart logo" class="logo">
+        <h1>Charity Cart</h1>
+    </header>
+
+    <body>
+        <div class="borderbox">
+            <aside>Amount Needed Until Free Shipping is:</aside>
+            <aside class="bold" id="recommmendation"></aside>
+        </div>
+       
+        <form method="POST" action="index.php">
+            <legend>Method of Donation</legend>
+            <aside>(pick 1 option)</aside>
+            <div>
+                <img src="gift-card-icon.png" alt="gift card icon" class="card">
+                <img src="basket-icon.png" alt="basket icon" class="basket">
+            </div>
+            <div style="padding: 5px 10px 10px 50px">
+                <input type="radio" name="method" value="giftCard" class="first" id="giftCard" required><label class="info">Gift Card</label>
+                <input type="radio" name="method" value="Basket" class="first" id="basket"><label class="info">Basket</label>
+            </div>
+
+            <div id="giftCardForm" class="hide">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" style="width: 61%; font-family: monospace; font-size: inherit;" required>
+                <br>
+                <label for="last-name">Your Email:</label>
+                <input type="text" id="last-name" name="last-name" style="width: 61%; font-family: monospace; font-size: inherit;" required>
+
+                <legend style="margin-top: 15px;">Gift Card Amount</legend>
+                
+                <div style="margin: 10px">
+                   
+                        <input type="radio" name="value" value="" id="recommendedValue" required>
+                        <label class="amt" id="difference"></label>
+
+                        <input type="radio" name="value" value="" id="tenthValue">
+                        <label class="amt" id="roundedDifference"></label>
+
+                        <input type="radio" name="value" value="" id="customValue">
+                        <label>$</label>
+                        <input type="number" name="value" id="valueInput" placeholder="Custom" style="width: 65px; font-family: monospace; font-size: inherit;" disabled>
+
+                </div> 
+                <button type="submit" id="submit" name="submit">Donate</button>
+                <aside id="cardMessage"></aside>
+                
+            </div>
+
+
+            <div id="basketForm" class="hide">
+                <legend>Types of Baskets</legend>
+                <aside>(pick 1 bundle)</aside>
+                <div>
+                    <img src="food-icons.png" alt="food items" class="food-icons">
+                    <img src="hygiene-icons.png" alt="hygiene items" class="hygiene-icons">
+                </div>
+                <div style="padding: 5px 0px 7px 30px">
+                    <input type="radio" name="baskettype" value="food" class="first" id="baskettype" required><label class="foodinfo">Food</label>
+                    <input type="radio" name="baskettype" value="hygiene" class="first" id="baskettype"><label class="hygieneinfo">Hygiene</label>
+                </div>
+                <legend>Basket Value</legend>
+                <div style="margin: 10px 10px 10px 30px">
+                    <input type="radio" name="bvalue" value="" id="tenthxoneValue" required>
+                    <label class="basketamt" id="basketRoundedDifference"></label>
+
+                    <input type="radio" name="bvalue" value="" id="tenthxtwoValue">
+                    <label class="basketamt" id="basketRoundedDifferenceTwo"></label>
+
+                    <input type="radio" name="bvalue" value="" id="tenthxfourValue">
+                    <label class="basketamt" id="basketRoundedDifferenceThree" style="margin-right: none"></label>
+
+                </div>
+                <button type="submit" id="addtocart">Add&nbspto&nbspCart</button>
+                <script src="/js/jquery-3.6.0.min.js"></script>
+                <aside id="basketMessage"></aside>
+
+                <button id="nearbyshelters">Show nearby shelters</button>
+            </div>
+        </form>
+
+        
+        <script src="/popup.js"></script>
+    </body>
+
+</html>
+
